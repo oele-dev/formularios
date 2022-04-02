@@ -1,0 +1,149 @@
+<html>
+
+	<head>
+	  <link rel="stylesheet" href="estilo.css">
+	</head>
+
+	<body>
+
+		<header>
+			<img src="https:via.placeholder.com/100x70" >
+			<h1>Titulo de la página</h1>
+		</header>
+		
+		<div class="nav-row">
+			<ul>
+				<li>
+					<a href="principal.html">Inicio</a>
+				</li>
+				<li>
+					<a href="frm_crear_rol.html">Crear rol</a>
+				</li>
+				<li>
+					<a href="#"> Otro link</a>
+				</li>
+				<li>
+					<a href="#"> Otro link</a>
+				</li>
+				<li>
+					<a href="#"> Otro link</a>
+				</li>
+				<li>
+					<a href="#"> Otro link</a>
+				</li>
+				<li>
+					<a href="#"> Otro link</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="wrapper">
+			<nav>
+				<h2>Menu</h2>
+				<ul>
+					<li>
+						<a href="principal.html">Inicio</a>
+					</li>
+					<li>
+						<a href="frm_crear_rol.html">Crear rol</a>
+					</li>
+					<li>
+						<a href="#"> Otro link</a>
+					</li>
+					<li>
+						<a href="#"> Otro link</a>
+					</li>
+					<li>
+						<a href="#"> Otro link</a>
+					</li>
+					<li>
+						<a href="#"> Otro link</a>
+					</li>
+					<li>
+						<a href="#"> Otro link</a>
+					</li>
+				</ul>
+			</nav>
+
+			<main>
+				<h2>Formulario: <b>Crear usuario</b></h2>
+			
+				<form action="">
+					<div class="input-wrapper">
+						<label for="user_name">Nombres:</label>
+						<input type="text" name="user_name" required>
+					</div>
+					
+					<div class="input-wrapper">
+						<label for="user_lastname">Apellidos:</label>
+						<input type="text" name="user_lastname" required>
+					</div>
+					
+					<div class="input-wrapper">
+						<label for="user_document">Documento:</label>
+						<input type="number" name="user_document" required>
+					</div>
+					
+					<div class="input-wrapper">
+						<label for="use_birthdate">Fecha de nacimiento:</label>
+						<input id="input-date" type="date" name="use_birthdate" required>
+					</div>
+					
+					<div class="input-wrapper">
+						<label for="user_email">Correo electrónico:</label>
+						<input type="email" name="user_email" required>
+					</div>
+					
+					<div class="buttons">
+						<button id="reset-button" type="reset">Cancelar</button>
+						<button id="submit-button" type="submit">Crear</button>
+					</div>
+				</form>
+			
+			</main>
+		</div>
+
+		<footer>
+
+			<h3>Pie de página</h3>
+
+		</footer>
+		
+		<script>
+			console.log('Hello world...')
+			
+			var resetButton = document.getElementById('reset-button')
+						
+			resetButton.addEventListener('click', function (e) {
+				e.preventDefault()
+				
+				// alert('Esta seguro de eliminar el formulario ?')
+				var dateString = document.getElementById('input-date')
+				var birthdate = getBirthdate(dateString.value)
+				
+				alert('Su edad es ' + birthdate)
+			})
+			
+			// date = dddd-mm-dd
+			function getBirthdate(dateString){
+				
+				var array_dates = dateString.split('-')
+				
+				// arrar_dates = ['dddd', 'mm', 'dd']
+				var year  = parseInt(array_dates[0])
+				var month = parseInt(array_dates[1])
+				var day   = parseInt(array_dates[2])
+				
+				var today = new Date()
+				
+				var age = today.getFullYear() - year;
+				
+				return age
+			
+			} 
+			
+		</script>
+
+	<body>
+
+</html>
